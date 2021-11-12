@@ -115,6 +115,7 @@ module.exports = {
   getAllMovies,
   getAllPodcast,
   getAllMusic,
+  getAllMusicVideo,
   getAllaudiobook,
   getAlltvShow,
   getAllsoftware,
