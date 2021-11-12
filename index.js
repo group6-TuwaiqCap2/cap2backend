@@ -13,9 +13,9 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use(helmet());
 
-app.get("/movies", (req, res) => {
+app.get("/movie", (req, res) => {
   axios
-    .get("https://itunes.apple.com/search?term=all&media=movie")
+    .get("https://itunes.apple.com/search?term=all&media=movie&limit=10")
     .then((response) => {
       res.status(200).json(response.data);
     });
@@ -23,7 +23,7 @@ app.get("/movies", (req, res) => {
 
 app.get("/podcast", (req, res) => {
   axios
-    .get("https://itunes.apple.com/search?term=all&media=podcast")
+    .get("https://itunes.apple.com/search?term=all&media=podcast&limit=10")
     .then((response) => {
       res.status(200).json(response.data);
     });
@@ -31,7 +31,7 @@ app.get("/podcast", (req, res) => {
 
 app.get("/music", (req, res) => {
   axios
-    .get("https://itunes.apple.com/search?term=all&media=music")
+    .get("https://itunes.apple.com/search?term=all&media=music&limit=10")
     .then((response) => {
       res.status(200).json(response.data);
     });
@@ -39,7 +39,7 @@ app.get("/music", (req, res) => {
 
 app.get("/audiobook", (req, res) => {
   axios
-    .get("https://itunes.apple.com/search?term=all&media=audiobook")
+    .get("https://itunes.apple.com/search?term=all&media=audiobook&limit=10")
     .then((response) => {
       res.status(200).json(response.data);
     });
@@ -47,7 +47,7 @@ app.get("/audiobook", (req, res) => {
 
 app.get("/musicVideo", (req, res) => {
   axios
-    .get("https://itunes.apple.com/search?term=all&media=musicVideo")
+    .get("https://itunes.apple.com/search?term=all&media=musicVideo&limit=10")
     .then((response) => {
       res.status(200).json(response.data);
     });
@@ -55,7 +55,7 @@ app.get("/musicVideo", (req, res) => {
 
 app.get("/tvShow", (req, res) => {
   axios
-    .get("https://itunes.apple.com/search?term=all&media=tvShow")
+    .get("https://itunes.apple.com/search?term=all&media=tvShow&limit=10")
     .then((response) => {
       res.status(200).json(response.data);
     });
@@ -63,7 +63,7 @@ app.get("/tvShow", (req, res) => {
 
 app.get("/software", (req, res) => {
   axios
-    .get("https://itunes.apple.com/search?term=all&media=software")
+    .get("https://itunes.apple.com/search?term=all&media=software&limit=10")
     .then((response) => {
       res.status(200).json(response.data);
     });
@@ -71,7 +71,7 @@ app.get("/software", (req, res) => {
 
 app.get("/ebook", (req, res) => {
   axios
-    .get("https://itunes.apple.com/search?term=all&media=ebook")
+    .get("https://itunes.apple.com/search?term=all&media=ebook&limit=10")
     .then((response) => {
       res.status(200).json(response.data);
     });
