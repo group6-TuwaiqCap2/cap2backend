@@ -65,10 +65,15 @@ const getAllebookMiddleware = (req, res, next) => {
 const ebookRouter = express.Router();
 ebookRouter.get("/", getAllebookMiddleware, getAllebook);
 
-(module.exports = movieRouter,
+const getAllebookMiddleware = (req, res, next) => {
+  console.log("get All ebook");
+  next();
+};
+
+(module.exports = movieRouter),
   podcastRouter,
   musicRouter,
   audiobookRouter,
   tvShowRouter,
   softwareRouter,
-  ebookRouter);
+  ebookRouter;
