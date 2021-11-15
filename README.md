@@ -13,7 +13,6 @@ ___
 ![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 ___
 ## Tech/framework used:
-* JavaScript
 * Node.js
 * Express
 * postman
