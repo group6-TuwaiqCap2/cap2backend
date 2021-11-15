@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const fs = require("fs");
 const axios = require("axios");
+const fs = require("fs");
 
 dotenv.config();
 const app = express();
@@ -13,6 +14,16 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors());
 app.use(helmet());
+
+let faiveredmovie = [];
+fs.readFile("./db/faiverotmovie.json", (err, data) => {
+  if (err) {
+    console.log(err);
+    return err;
+  } else {
+    faiveredmovie = JSON.parse(data.toString());
+  }
+});
 
 app.get("/movie", (req, res) => {
   axios
@@ -77,6 +88,25 @@ app.get("/ebook", (req, res) => {
       res.status(200).json(response.data);
     });
 });
+
+//favoruite
+
+const addToFav2 = (req, res) => {
+  const { result } = req.body;
+  faiveredmovie.push(result);
+  fs.writeFile(
+    "./db/faiverotmovie.json",
+    JSON.stringify(faiveredmovie),
+    (err) => {
+      if (err) {
+        res.status(404).json("badresult");
+      } else {
+        res.status(200).json(result);
+      }
+    }
+  );
+};
+app.post("/movie/addToFav2", addToFav2);
 
 const PORT = process.env.PORT || 4000;
 
