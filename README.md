@@ -14,9 +14,9 @@ ___
 ___
 ## Tech/framework used:
 * JavaScript
-* React
 * Node.js
 * Express
+* postman
 ___
 ## API Reference:
 [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
